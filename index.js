@@ -9,6 +9,9 @@
     
 // })
 
+// const {log}=require('console')
+// const http=req
+
 // const http = require("http");
 
 // const server = http.createServer((req, res) => {
@@ -30,15 +33,17 @@
 // console.log("read file...()this runs first");
 
 
+
+
 // console.log(__dirname);
 // console.log(__filename);
 
-const fs=require('fs')
-const path=require('path')
-const pathDir=path.join(__dirname,"crus")
+// const fs=require('fs')
+// const path=require('path')
+// const pathDir=path.join(__dirname,"crus")
 
-const filePath=`${pathDir}/demo.txt`
-console.log(pathDir);
+// const filePath=`${pathDir}/demo.txt`
+// console.log(pathDir);
 
 // fs.writeFileSync(filePath,"hello node students")
 
@@ -61,3 +66,105 @@ console.log(pathDir);
 
 // fs.unlinkSync(`${pathDir}/demo1.txt`)
 
+// const fs = require("fs");
+
+// const inputData = process.argv;
+
+// if (inputData[2] === "add") {
+//   fs.writeFileSync(inputData[3], inputData[4]);
+//   console.log("File added successfully");
+// } 
+// else if (inputData[2] === "remove") {
+//   if (fs.existsSync(inputData[3])) {
+//     fs.unlinkSync(inputData[3]);
+//     console.log("File removed successfully");
+//   } else {
+//     console.log("File does not exist");
+//   }
+// } 
+// else {
+//   console.log("Invalid value");
+// }
+
+// const fs = require("fs");
+
+// const inputData = process.argv;
+
+// if (inputData[2] === "add") {
+//   fs.writeFileSync(inputData[3], inputData[4]);
+//   let k=4+7
+//   console.log(k);
+// } 
+// else if (inputData[2] === "remove") {
+//   if (fs.existsSync(inputData[3])) {
+//     fs.unlinkSync(inputData[3]);
+//     console.log("File removed successfully");
+//   } else {
+//     console.log("File does not exist");
+//   }
+// } 
+// else {
+//   console.log("Invalid value");
+// }
+// console.log(process.argv[4]);
+
+// const sum = 0;
+// let  num2 = Number(process.argv[3]);
+// let sum=0;
+// for(let i=0;i<=10;i++ )
+//  {
+// sum=sum+i;
+//  }
+//  console.log(sum);
+ 
+// let sum = 0;
+
+// for (let i = 1; i <= 10; i++) {
+//   sum = sum + i;
+// }
+
+// console.log(sum);
+
+let  num1 = Number(process.argv[2]);
+let  num2 = Number(process.argv[3]);
+
+let oprator=process.argv[4]
+switch(oprator)
+{
+case "+":
+    let  sum = num1 + num2;
+
+console.log("Sum =", sum);
+
+case "-":
+ let  sub = num1 - num2;
+
+console.log("sub =", sub);
+
+case "*":
+ let  mul = num1 * num2;
+
+console.log("mul =", mul);
+
+case "/":
+ let  divi= num1 /num2;
+
+console.log(" divi=", divi);
+
+}
+
+
+
+// if(num1%2==0)
+// {
+// console.log("even");
+
+// } else{
+//     console.log("odd");
+// }
+
+
+
+// const sum = num1 + num2;
+
+// console.log("Sum =", sum);
