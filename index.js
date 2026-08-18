@@ -125,33 +125,33 @@
 
 // console.log(sum);
 
-let  num1 = Number(process.argv[2]);
-let  num2 = Number(process.argv[3]);
+// let  num1 = Number(process.argv[2]);
+// let  num2 = Number(process.argv[3]);
 
-let oprator=process.argv[4]
-switch(oprator)
-{
-case "+":
-    let  sum = num1 + num2;
+// let oprator=process.argv[4]
+// switch(oprator)
+// {
+// case "+":
+//     let  sum = num1 + num2;
 
-console.log("Sum =", sum);
+// console.log("Sum =", sum);
 
-case "-":
- let  sub = num1 - num2;
+// case "-":
+//  let  sub = num1 - num2;
 
-console.log("sub =", sub);
+// console.log("sub =", sub);
 
-case "*":
- let  mul = num1 * num2;
+// case "*":
+//  let  mul = num1 * num2;
 
-console.log("mul =", mul);
+// console.log("mul =", mul);
 
-case "/":
- let  divi= num1 /num2;
+// case "/":
+//  let  divi= num1 /num2;
 
-console.log(" divi=", divi);
+// console.log(" divi=", divi);
 
-}
+// }
 
 
 
@@ -168,3 +168,67 @@ console.log(" divi=", divi);
 // const sum = num1 + num2;
 
 // console.log("Sum =", sum);
+
+
+
+
+
+// const {log}=require('console')
+// const http=require("http")
+// const server =http.createServer((req,res)=>
+
+// {
+//     if(req.url=='/')
+
+//         {
+//     //    res.write("hello Home page")
+//        res.end("hello Home page")
+//     //    res.end()
+// }
+//       else if  (req.url=="/product")
+//          {
+//       res.write(JSON.stringify({product:["moblie","tv","laptop"]}))
+//       res.end()
+// }
+//    else if(req.url=="/user") 
+//   {
+//    console.log(req.method);
+   
+//     // res.write()
+//     res.end(JSON.stringify({user:["moblie112","tv","laptop"]}))
+//   }
+// else
+//     {
+//     res.write("invalid route route 404")
+//     res.end()
+//  }
+//  }
+//  )
+// server .listen(3000,()=>{
+//     console.log("severis running at port 3000");
+// })
+
+
+const express =require('express')
+let app=express()
+
+app.get('/',(req,res)=>
+{
+    res.send("hello Home page")
+})
+
+app.get('/product',(req,res)=>
+{
+    res.send({product:["moblie","tv","laptop"]})
+})
+
+app.get('/user',(req,res)=>
+{
+    res.send({user:["moblie","tv","laptop"]})
+})
+
+
+app.listen(3000,()=>{
+    console.log("server is listen at port 3000");
+    
+})
