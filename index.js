@@ -209,25 +209,176 @@
 // })
 
 
+// const express =require('express')
+// let app=express()
+
+// app.get('/',(req,res)=>
+// {
+//     res.send("hello Home page")
+// })
+
+// app.get('/product',(req,res)=>
+// {
+//     res.send({product:["moblie","tv","laptop"]})
+// })
+
+// app.get('/user',(req,res)=>
+// {
+//     res.send({user:["moblie","tv","laptop"]})
+// })
+
+
+// app.listen(3000,()=>{
+//     console.log("server is listen at port 3000");
+    
+// })
+
+
+// const express =require('express')
+// let app=express()
+
+// const express =require('express')
+// let app=express()
+
+// const reqFilter=(req,res,next)=>{
+//     if(!req.query.age)
+//     {
+//         res.send("please Enter your age")
+//     }
+//    else if(req.query.age<18)
+//     {
+//         res.send("age must be greater than 18")
+//     }
+//     else 
+//     {
+//         next()
+//     }
+// }
+
+// //app.use(reqFilter)  //middleware  applcation ,router base
+
+// app.get('/',(req,res)=>
+// {
+//     res.send("hello Home page")
+// })
+// app.get('/product',(req,res)=>
+// {
+//     res.send({product:["moblie","tv","laptop"]})
+// })
+// app.get('/user',reqFilter,(req,res)=>
+// {
+//     console.log(req.query.age); //http://localhost:3000/user?age=10
+    
+//     res.send({user:["moblie","tv","laptop"]})
+// })
+// app.listen(3000,()=>{
+//     console.log("server is listen at port 3000");
+    
+// })
+
+//url lana, get method ,next pr chalajye 
+
+
+// const express =require('express')
+// let app=express()
+
+// const checkUrl=(req,res,next)=>{
+// console.log("url"+req.url);
+// console.log("Method"+req.method);
+
+
+//         next()
+
+// }
+// app.use(checkUrl)
+// app.get('/',(req,res)=>
+// {
+//     res.send("hello Home page")
+// })
+// app.get('/product',(req,res)=>
+// {
+//     res.send({product:["moblie","tv","laptop"]})
+// })
+// app.get('/user',(req,res)=>
+// {
+//     console.log(req.query.age); //http://localhost:3000/user?age=10
+    
+//     res.send({user:["moblie","tv","laptop"]})
+// })
+// app.listen(3000,()=>{
+//     console.log("server is listen at port 3000");
+    
+// })
+
+
+
+// const express =require('express')
+// let app=express()
+
+// const reqFilter=(req,res,next)=>{
+// let to=req.query.token;
+//     if(to)
+//     {
+//         res.send("please valid tokon")
+//     }
+//  else if(!req.query.to)
+//     {
+//         res.send("please valid tokon")
+
+//         // next()
+//     }
+// }
+
+// //app.use(reqFilter)  //middleware  applcation ,router base
+
+// app.get('/',(req,res)=>
+// {
+//     res.send("hello Home page")
+// })
+// app.get('/product',(req,res)=>
+// {
+//     res.send({product:["moblie","tv","laptop"]})
+// })
+// app.get('/user',reqFilter,(req,res)=>
+// {
+//     console.log(req.query.age); //http://localhost:3000/user?age=10
+    
+//     res.send({user:["moblie","tv","laptop"]})
+// })
+// app.listen(3000,()=>{
+//     console.log("server is listen at port 3000");
+    
+// })
+
 const express =require('express')
 let app=express()
 
+const reqFilter=(req,res,next)=>
+{
+    req.urlTime=new Date().toLocaleString()
+ 
+    next()
+}
+
+app.use(reqFilter) 
+//  //middleware  applcation ,router base
+
 app.get('/',(req,res)=>
 {
-    res.send("hello Home page")
+    res.send(`real hit time ${ req.urlTime}`)
 })
-
 app.get('/product',(req,res)=>
 {
-    res.send({product:["moblie","tv","laptop"]})
-})
+        res.send(`real hit time ${ req.urlTime}`)
 
-app.get('/user',(req,res)=>
+})
+app.get('/user',reqFilter,(req,res)=>
 {
-    res.send({user:["moblie","tv","laptop"]})
+//    console.log(req.query.age); //http://localhost:3000/user?age=10
+    
+    res.send(`real hit time ${ req.urlTime}`)
+
 })
-
-
 app.listen(3000,()=>{
     console.log("server is listen at port 3000");
     
