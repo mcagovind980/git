@@ -350,36 +350,101 @@
     
 // })
 
-const express =require('express')
-let app=express()
+// const express =require('express')
+// let app=express()
 
-const reqFilter=(req,res,next)=>
-{
-    req.urlTime=new Date().toLocaleString()
+// const reqFilter=(req,res,next)=>
+// {
+//     req.urlTime=new Date().toLocaleString()
  
-    next()
+//     next()
+// }
+
+// app.use(reqFilter) 
+// //  //middleware  applcation ,router base
+
+// app.get('/',(req,res)=>
+// {
+//     res.send(`real hit time ${ req.urlTime}`)
+// })
+// app.get('/product',(req,res)=>
+// {
+//         res.send(`real hit time ${ req.urlTime}`)
+
+// })
+// app.get('/user',reqFilter,(req,res)=>
+// {
+// //    console.log(req.query.age); //http://localhost:3000/user?age=10
+    
+//     res.send(`real hit time ${ req.urlTime}`)
+
+// })
+// app.listen(3000,()=>{
+//     console.log("server is listen at port 3000");
+    
+// })
+
+// let  a=20;
+// let b=40;
+// let sum=a+b
+// console.log(sum);
+
+// const a=10;
+// const salary=100;
+// const age=300;
+// const isDeveloper=true;
+// const user={
+// name:"govind",
+// year:"2001",
+// city:"lucknow"
+
+// }
+
+// console.log(a);
+// console.log(salary);
+// console.log(age);
+// console.log(isDeveloper);
+// console.log(user.name);
+// console.log(user.year);
+// console.log(user.city);
+
+
+// const a=10;
+// const b=30;
+// console.log(a+b);
+// console.log(a*b);
+// console.log(a-b);
+// console.log(a/b);
+// console.log(a%b);
+
+// console.log(a+b);
+
+
+// const age=17;
+// const has=true;
+// console.log(age>=18 && has);
+
+
+// const age=18;
+// const country="india";
+// console.log(age>=18);
+// console.log(country==="india");
+// console.log(age>=18 &&  "india");
+
+// let score=18;
+// let sum=score+2;
+// console.log(sum);
+
+let age=28;
+if(age>19)
+{
+    console.log("your are eligible");
+    
+}else if(age<19){
+console.log("you are not eligible");
+}
+else{
+    console.log("you are eligible1");
+    
 }
 
-app.use(reqFilter) 
-//  //middleware  applcation ,router base
-
-app.get('/',(req,res)=>
-{
-    res.send(`real hit time ${ req.urlTime}`)
-})
-app.get('/product',(req,res)=>
-{
-        res.send(`real hit time ${ req.urlTime}`)
-
-})
-app.get('/user',reqFilter,(req,res)=>
-{
-//    console.log(req.query.age); //http://localhost:3000/user?age=10
-    
-    res.send(`real hit time ${ req.urlTime}`)
-
-})
-app.listen(3000,()=>{
-    console.log("server is listen at port 3000");
-    
-})
