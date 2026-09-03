@@ -435,16 +435,125 @@
 // let sum=score+2;
 // console.log(sum);
 
-let age=28;
-if(age>19)
-{
-    console.log("your are eligible");
+// let age=28;
+// if(age>19)
+// {
+//     console.log("your are eligible");
     
-}else if(age<19){
-console.log("you are not eligible");
-}
-else{
-    console.log("you are eligible1");
+// }else if(age<19){
+// console.log("you are not eligible");
+// }
+// else{
+//     console.log("you are eligible1");
     
+// }
+
+// console.log('All Argument'process.argv);
+
+// const fs=require("fs");
+// console.log("file reaad");
+// fs.writeFile('myfile.txt','this is file','utf8',(err)=>{
+// if(err) throw err;
+// console.log('file create sucessfully');
+// })
+// console.log("after file read");
+
+// const fs=require("fs");
+// console.log("file reaad");
+// fs.readFile('myfile.txt','utf8','this is file',(err,data)=>{
+// if(err) throw err;
+// console.log('file create sucessfully'+data);
+// })
+// console.log("after file read");
+
+
+
+// const fs = require("fs");
+
+// console.log("file read");
+
+// fs.readFile("myfile.txt", "utf8", (err, data) => {
+//   if (err) throw err;
+
+//   console.log("File content: " + data);
+// });
+
+// console.log("after file read");
+
+const fs = require("fs").promises;
+async function readFiles() {
+  try {
+    console.log("1. Starting to read files...");
+   await fs.writeFile('file101.txt','Hello world', 'utf8');
+   await fs.writeFile('file102.txt', 'Hello world','utf8');
+    console.log('2. Files read successfully!');
+    // return { data1, data2 };
+  }
+   catch (error) 
+  {
+    console.error('Error reading files:', error);
+  }
 }
+readFiles();
+
+
+// const fs = require("fs").promises;
+
+// async function readFiles() {
+//   try {
+//     console.log("1. Starting to create files...");
+
+//     await fs.writeFile("file11.txt", "Hello world", "utf8");
+//     await fs.writeFile("file12.txt", "Hello world", "utf8");
+
+//     console.log("2. Files created successfully!");
+
+    // const data1 = await fs.readFile("file1.txt", "utf8");
+    // const data2 = await fs.readFile("file2.txt", "utf8");
+
+    // console.log("File 1:", data1);
+    // console.log("File 2:", data2);
+
+    // return { data1, data2 };
+//   } catch (error) {
+//     console.error("Error:", error);
+//   }
+// }
+
+// readFiles();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
