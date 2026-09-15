@@ -33,8 +33,8 @@
 
 // }
 
-// module.exports=getData
-// getData();
+module.exports=getData
+getData();
 
 const { MongoClient } = require("mongodb");
 

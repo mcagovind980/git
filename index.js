@@ -9,6 +9,8 @@
     
 // })
 
+
+
 // const {log}=require('console')
 // const http=req
 
@@ -21,6 +23,8 @@
 // server.listen(3000, () => {
 //     console.log("Server running on port 3000");
 // });
+
+
 
 // const fs=require("fs");
 // fs.readFile("index.html","utf-8",(err,data)=>{
@@ -480,21 +484,21 @@
 
 // console.log("after file read");
 
-const fs = require("fs").promises;
-async function readFiles() {
-  try {
-    console.log("1. Starting to read files...");
-   await fs.writeFile('file101.txt','Hello world', 'utf8');
-   await fs.writeFile('file102.txt', 'Hello world','utf8');
-    console.log('2. Files read successfully!');
-    // return { data1, data2 };
-  }
-   catch (error) 
-  {
-    console.error('Error reading files:', error);
-  }
-}
-readFiles();
+// const fs = require("fs").promises;
+// async function readFiles() {
+//   try {
+//     console.log("1. Starting to read files...");
+//    await fs.writeFile('file101.txt','Hello world', 'utf8');
+//    await fs.writeFile('file102.txt', 'Hello world','utf8');
+//     console.log('2. Files read successfully!');
+//     // return { data1, data2 };
+//   }
+//    catch (error) 
+//   {
+//     console.error('Error reading files:', error);
+//   }
+// }     
+// readFiles();
 
 
 // const fs = require("fs").promises;
@@ -550,7 +554,34 @@ readFiles();
 
 
 
+const express = require("express");
+const multer = require("multer");
+const path = require("path");
 
+const app = express();
+
+const upload = multer({
+    storage: multer.diskStorage({
+        destination: function (req, file, cb) {
+            cb(null, "uploads");
+        },
+
+        filename: function (req, file, cb) {
+            const ext = path.extname(file.originalname);
+            const name = path.basename(file.originalname, ext);
+
+            cb(null, name + "-" + Date.now() + ext);
+        }
+    })
+}).single("user_file");
+
+app.post("/upload", upload, (req, resp) => {
+    resp.send("File uploaded successfully");
+});
+
+app.listen(4000, () => {
+    console.log("Server is listening at port 4000");
+});
 
 
 
